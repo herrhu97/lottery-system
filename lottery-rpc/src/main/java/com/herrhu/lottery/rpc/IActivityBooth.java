@@ -9,5 +9,5 @@ import com.herrhu.lottery.rpc.res.ActivityRes;
  * @time: 2021/12/4 21:46
  */
 public interface IActivityBooth {
-    ActivityRes queryActivityId(ActivityReq activityReq);
+    ActivityRes queryActivityById(ActivityReq activityReq);
 }

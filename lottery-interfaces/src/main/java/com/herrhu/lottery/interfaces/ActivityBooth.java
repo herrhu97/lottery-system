@@ -8,7 +8,7 @@ import com.herrhu.lottery.rpc.IActivityBooth;
 import com.herrhu.lottery.rpc.dto.ActivityDto;
 import com.herrhu.lottery.rpc.req.ActivityReq;
 import com.herrhu.lottery.rpc.res.ActivityRes;
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.Service;
 
 import javax.annotation.Resource;
 
@@ -19,7 +19,7 @@ public class ActivityBooth implements IActivityBooth {
     private IActivityDao activityDao;
 
     @Override
-    public ActivityRes queryActivityId(ActivityReq activityReq) {
+    public ActivityRes queryActivityById(ActivityReq activityReq) {
         Activity activity = activityDao.queryActivityById(activityReq.getActivityId());
 
         ActivityDto activityDto = new ActivityDto();
