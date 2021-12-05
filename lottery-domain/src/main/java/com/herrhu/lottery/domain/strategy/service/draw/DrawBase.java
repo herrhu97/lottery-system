@@ -14,6 +14,7 @@ import java.util.List;
  */
 public class DrawBase extends DrawConfig{
     public void checkAndInitRateData(Long strategyId, Integer strategyMode, List<StrategyDetail> strategyDetailList) {
+        //策略1需要初始化，其他不需要
         if (1 != strategyMode) return;
         IDrawAlgorithm drawAlgorithm = drawAlgorithmMap.get(strategyMode);
 

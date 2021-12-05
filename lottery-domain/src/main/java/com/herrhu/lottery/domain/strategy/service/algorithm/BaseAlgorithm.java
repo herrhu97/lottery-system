@@ -44,6 +44,7 @@ public abstract class BaseAlgorithm implements IDrawAlgorithm{
             // rateTuple[1 ~ 20] = "2100"; rateTuple[21 ~ 50] = "4300"
             // 与上面类似，但是这个加了斐波那契散列法
             // 使用时只需 rateTuple[hashIdx(i)]获取奖品id
+            // 1 ~ 100 散列到 0 ~ 128 不会产生碰撞
             for (int i = cursorVal + 1; i <= (rateVal + cursorVal); i ++) {
                 rateTuple[hashIdx(i)] = awardRateInfo.getAwardId();
             }
