@@ -4,6 +4,9 @@ import com.herrhu.lottery.domain.strategy.model.aggregates.StrategyRich;
 import com.herrhu.lottery.infrastructure.po.Award;
 import com.herrhu.lottery.infrastructure.po.Strategy;
 
+/**
+ * @author herrhu
+ */
 public interface IStrategyRepository {
 
     StrategyRich queryStrategyRich(Long strategyId);

@@ -12,6 +12,9 @@ import org.apache.dubbo.config.annotation.Service;
 
 import javax.annotation.Resource;
 
+/**
+ * @author herrhu
+ */
 @Service
 public class ActivityBooth implements IActivityBooth {
 

@@ -4,6 +4,9 @@ import com.herrhu.lottery.domain.strategy.model.vo.AwardRateInfo;
 
 import java.util.List;
 
+/**
+ * @author herrhu
+ */
 public interface IDrawAlgorithm {
 
     /**
