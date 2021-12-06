@@ -1,5 +1,8 @@
 package com.herrhu.lottery.domain.strategy.model.res;
 
+import com.herrhu.lottery.common.Constants;
+import com.herrhu.lottery.domain.strategy.model.vo.DrawAwardInfo;
+
 /**
  * @description:
  * @author: HerrHu
@@ -12,20 +15,28 @@ public class DrawResult {
     //策略id
     private Long strategyId;
 
-    //奖品id
-    private String rewardId;
+    /**
+     * 中奖状态（默认未中奖）
+     */
+    private Integer drawState = Constants.DrawState.FAIL.getCode();
 
     //奖品名称
-    private String awardName;
+    private DrawAwardInfo drawAwardInfo;
 
     public DrawResult() {
     }
 
-    public DrawResult(String uId, Long strategyId, String rewardId, String awardName) {
+    public DrawResult(String uId, Long strategyId, Integer drawState) {
         this.uId = uId;
         this.strategyId = strategyId;
-        this.rewardId = rewardId;
-        this.awardName = awardName;
+        this.drawState = drawState;
+    }
+
+    public DrawResult(String uId, Long strategyId, Integer drawState, DrawAwardInfo drawAwardInfo) {
+        this.uId = uId;
+        this.strategyId = strategyId;
+        this.drawState = drawState;
+        this.drawAwardInfo = drawAwardInfo;
     }
 
     public String getuId() {
@@ -44,19 +55,4 @@ public class DrawResult {
         this.strategyId = strategyId;
     }
 
-    public String getRewardId() {
-        return rewardId;
-    }
-
-    public void setRewardId(String rewardId) {
-        this.rewardId = rewardId;
-    }
-
-    public String getAwardName() {
-        return awardName;
-    }
-
-    public void setAwardName(String awardName) {
-        this.awardName = awardName;
-    }
 }

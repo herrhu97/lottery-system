@@ -19,7 +19,7 @@ import java.util.List;
  * @time: 2021/12/5 14:48
  */
 @Component
-public class StrategyRepository  implements IStrategyRepository {
+public class StrategyRepository implements IStrategyRepository {
 
     @Resource
     private IStrategyDao strategyDao;
@@ -40,5 +40,19 @@ public class StrategyRepository  implements IStrategyRepository {
     @Override
     public Award queryAwardInfo(String awardId) {
         return awardDao.queryAwardInfo(awardId);
+    }
+
+    @Override
+    public List<String> queryNoStockStrategyAwardList(Long strategyId) {
+        return strategyDetailDao.queryNoStockStrategyAwardList(strategyId);
+    }
+
+    @Override
+    public boolean deductStock(Long strategyId, String awardId) {
+        StrategyDetail req = new StrategyDetail();
+        req.setStrategyId(strategyId);
+        req.setAwardId(awardId);
+        int count = strategyDetailDao.deductStock(req);
+        return count == 1;
     }
 }

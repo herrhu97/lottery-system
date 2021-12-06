@@ -14,8 +14,8 @@ import java.util.List;
  * @author: HerrHu
  * @time: 2021/12/5 17:54
  */
-@Component("defaultRateRandomDrawAlgorithm")
-public class DefaultRateRandomDrawAlgorithm extends BaseAlgorithm {
+@Component("entireRateRandomDrawAlgorithm")
+public class EntireRateRandomDrawAlgorithm extends BaseAlgorithm {
     @Override
     public String randomDraw(Long strategyId, List<String> excludeAwardIds) {
         BigDecimal differenceDenominator = BigDecimal.ZERO;
@@ -35,8 +35,12 @@ public class DefaultRateRandomDrawAlgorithm extends BaseAlgorithm {
         }
 
         //前置判断
-        if (differenceAwardRateList.size() == 0) return "";
-        if (differenceAwardRateList.size() == 1) return differenceAwardRateList.get(0).getAwardId();
+        if (differenceAwardRateList.size() == 0) {
+            return "";
+        }
+        if (differenceAwardRateList.size() == 1) {
+            return differenceAwardRateList.get(0).getAwardId();
+        }
 
         SecureRandom secureRandom = new SecureRandom();
         int randomV = secureRandom.nextInt(100) + 1;
