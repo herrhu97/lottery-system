@@ -18,7 +18,7 @@ public class DrawConfig {
     private IDrawAlgorithm entireRateRandomDrawAlgorithm;
 
     @Resource
-    private IDrawAlgorithm singleRateRandomAlgorithm;
+    private IDrawAlgorithm singleRateRandomDrawAlgorithm;
 
     // 抽奖策略组
     protected static Map<Integer, IDrawAlgorithm> drawAlgorithmGroup = new ConcurrentHashMap<>();
@@ -26,6 +26,6 @@ public class DrawConfig {
     @PostConstruct
     public void init() {
         drawAlgorithmGroup.put(Constants.StrategyMode.ENTIRETY.getCode(), entireRateRandomDrawAlgorithm);
-        drawAlgorithmGroup.put(Constants.StrategyMode.SINGLE.getCode(), singleRateRandomAlgorithm);
+        drawAlgorithmGroup.put(Constants.StrategyMode.SINGLE.getCode(), singleRateRandomDrawAlgorithm);
     }
 }

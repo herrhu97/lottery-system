@@ -46,12 +46,12 @@ public class Constants {
         /**
          * 单项概率
          */
-        SINGLE(0, "单项概率"),
+        SINGLE(1, "单项概率"),
 
         /**
          * 总体概率
          */
-        ENTIRETY(1, "总体概率");
+        ENTIRETY(2, "总体概率");
 
 
         private Integer code;
@@ -111,6 +111,89 @@ public class Constants {
         }
 
         public void setInfo(String info) {
+            this.info = info;
+        }
+    }
+
+    /**
+     * 发奖状态
+     */
+    public enum AwardState {
+        /**
+         * 发奖状态
+         */
+        FAILURE(2, "发奖失败"),
+        SUCCESS(1, "发奖成功"),
+        WAIT(0, "等待发奖");
+
+        private Integer code;
+        private String info;
+
+        public Integer getCode() {
+            return code;
+        }
+
+        public void setCode(Integer code) {
+            this.code = code;
+        }
+
+        public String getInfo() {
+            return info;
+        }
+
+        public void setInfo(String info) {
+            this.info = info;
+        }
+
+        AwardState(Integer code, String info) {
+            this.code = code;
+            this.info = info;
+        }
+    }
+
+    /**
+     * 奖品类型
+     */
+    public enum AwardType {
+        /**
+         * 文字描述
+         */
+        DESC(1, "文字描述"),
+        /**
+         * 兑换码
+         */
+        RedeemCodeGoods(2, "兑换码"),
+        /**
+         * 优惠券
+         */
+        CouponGoods(3, "优惠券"),
+        /**
+         * 实物奖品
+         */
+        PhysicalGoods(4, "实物奖品");
+
+
+        private Integer code;
+        private String info;
+
+        public Integer getCode() {
+            return code;
+        }
+
+        public void setCode(Integer code) {
+            this.code = code;
+        }
+
+        public String getInfo() {
+            return info;
+        }
+
+        public void setInfo(String info) {
+            this.info = info;
+        }
+
+        AwardType(Integer code, String info) {
+            this.code = code;
             this.info = info;
         }
     }

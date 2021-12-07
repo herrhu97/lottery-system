@@ -55,4 +55,19 @@ public class DrawResult {
         this.strategyId = strategyId;
     }
 
+    public Integer getDrawState() {
+        return drawState;
+    }
+
+    public void setDrawState(Integer drawState) {
+        this.drawState = drawState;
+    }
+
+    public DrawAwardInfo getDrawAwardInfo() {
+        return drawAwardInfo;
+    }
+
+    public void setDrawAwardInfo(DrawAwardInfo drawAwardInfo) {
+        this.drawAwardInfo = drawAwardInfo;
+    }
 }

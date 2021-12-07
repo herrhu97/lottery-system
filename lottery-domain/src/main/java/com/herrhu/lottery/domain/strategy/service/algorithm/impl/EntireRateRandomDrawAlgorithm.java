@@ -22,8 +22,10 @@ public class EntireRateRandomDrawAlgorithm extends BaseAlgorithm {
 
         //排除不在抽奖范围的奖品ID集合
         List<AwardRateInfo> differenceAwardRateList = new ArrayList<>();
+
         List<AwardRateInfo> awardRateIntervalValList = awardRateInfoMap.get(strategyId);
 
+        // 如果选择此算法，会在awardRateIntervalValList报空指针异常
         //将awardRateIntervalValList中排除excludeAwardIds后剩下的放入differenceAwardRateList，并统计剩余的概率和
         for (AwardRateInfo awardRateInfo : awardRateIntervalValList) {
             String awardId = awardRateInfo.getAwardId();
