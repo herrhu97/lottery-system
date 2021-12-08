@@ -123,31 +123,31 @@ public class ActivityTest {
         award_01.setAwardId("101");
         award_01.setAwardType(Constants.AwardType.DESC.getCode());
         award_01.setAwardName("电脑");
-        award_01.setAwardContent("请联系活动组织者 fustack");
+        award_01.setAwardContent("请联系活动组织者 herrhu");
 
         AwardVO award_02 = new AwardVO();
         award_02.setAwardId("102");
         award_02.setAwardType(Constants.AwardType.DESC.getCode());
         award_02.setAwardName("手机");
-        award_02.setAwardContent("请联系活动组织者 fustack");
+        award_02.setAwardContent("请联系活动组织者 herrhu");
 
         AwardVO award_03 = new AwardVO();
         award_03.setAwardId("103");
         award_03.setAwardType(Constants.AwardType.DESC.getCode());
         award_03.setAwardName("平板");
-        award_03.setAwardContent("请联系活动组织者 fustack");
+        award_03.setAwardContent("请联系活动组织者 herrhu");
 
         AwardVO award_04 = new AwardVO();
         award_04.setAwardId("104");
         award_04.setAwardType(Constants.AwardType.DESC.getCode());
         award_04.setAwardName("耳机");
-        award_04.setAwardContent("请联系活动组织者 fustack");
+        award_04.setAwardContent("请联系活动组织者 herrhu");
 
         AwardVO award_05 = new AwardVO();
         award_05.setAwardId("105");
         award_05.setAwardType(Constants.AwardType.DESC.getCode());
         award_05.setAwardName("数据线");
-        award_05.setAwardContent("请联系活动组织者 fustack");
+        award_05.setAwardContent("请联系活动组织者 herrhu");
 
         List<AwardVO> awardList = new ArrayList<>();
         awardList.add(award_01);
@@ -166,11 +166,11 @@ public class ActivityTest {
 
     @Test
     public void test_alterState() {
-        logger.info("提交审核，测试：{}", JSON.toJSONString(stateHandler.arraignment(100001L, Constants.ActivityState.EDIT)));
-        logger.info("审核通过，测试：{}", JSON.toJSONString(stateHandler.checkPass(100001L, Constants.ActivityState.ARRAIGNMENT)));
-        logger.info("运行活动，测试：{}", JSON.toJSONString(stateHandler.doing(100001L, Constants.ActivityState.PASS)));
+        logger.info("提交审核，测试：{}", JSON.toJSONString(stateHandler.arraignment(120981321L, Constants.ActivityState.EDIT)));
+        logger.info("审核通过，测试：{}", JSON.toJSONString(stateHandler.checkPass(120981321L, Constants.ActivityState.ARRAIGNMENT)));
+        logger.info("运行活动，测试：{}", JSON.toJSONString(stateHandler.doing(120981321L, Constants.ActivityState.PASS)));
         // 故意写错的一句，为DoingState状态，填入的是EditState状态
-        logger.info("二次提审，测试：{}", JSON.toJSONString(stateHandler.checkPass(100001L, Constants.ActivityState.EDIT)));
+        logger.info("二次提审，测试：{}", JSON.toJSONString(stateHandler.checkPass(120981321L, Constants.ActivityState.EDIT)));
     }
 
 }
