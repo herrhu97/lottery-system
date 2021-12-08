@@ -1,4 +1,4 @@
-package com.herrhu.lottery.domain.award.repository.impl;
+package com.herrhu.lottery.infrastructure.repository;
 
 import com.herrhu.lottery.domain.award.repository.IAwardRepository;
 import org.springframework.stereotype.Component;
