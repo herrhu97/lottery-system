@@ -259,4 +259,16 @@ public class Constants {
             this.info = info;
         }
     }
+
+    /**
+     * 策略id生成
+     */
+    public enum Ids {
+        /**
+         * 雪花算法
+         */
+        SnowFlake,
+        RandomNumeric,
+        ShortCode;
+    }
 }
